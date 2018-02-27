@@ -30,24 +30,6 @@ int createUInputDevice() {
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_SELECT);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_START);
   
-  // axis
-  ret |= ioctl(fd, UI_SET_EVBIT, EV_ABS);
-  ret |= ioctl(fd, UI_SET_ABSBIT, ABS_X);
-  uidev.absmin[ABS_X] = -512;
-  uidev.absmax[ABS_X] = 511;
-  
-  ret |= ioctl(fd, UI_SET_ABSBIT, ABS_Y);
-  uidev.absmin[ABS_Y] = -512;
-  uidev.absmax[ABS_Y] = 511;
-
-  ret |= ioctl(fd, UI_SET_ABSBIT, ABS_HAT0X);
-  uidev.absmin[ABS_HAT0X] = -1;
-  uidev.absmax[ABS_HAT0X] = 1;
-
-  ret |= ioctl(fd, UI_SET_ABSBIT, ABS_HAT0Y);
-  uidev.absmin[ABS_HAT0Y] = -1;
-  uidev.absmax[ABS_HAT0Y] = 1;
-  
   if(ret) {
     fprintf(stderr, "Error while configuring uinput device!\n");
     exit(1);
