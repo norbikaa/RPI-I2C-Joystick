@@ -23,10 +23,10 @@ int createUInputDevice() {
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_B);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_X);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_Y);
-  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_UP);
-  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_DOWN);
-  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_LEFT);
-  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_RIGHT);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_UP);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_DOWN);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_LEFT);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_RIGHT);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_SELECT);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_START);
   
