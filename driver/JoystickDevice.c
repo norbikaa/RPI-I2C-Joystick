@@ -25,10 +25,10 @@ int createUInputDevice() {
   ret |= ioctl(fd, UI_SET_KEYBIT, KEY_RIGHT);
   ret |= ioctl(fd, UI_SET_KEYBIT, KEY_LEFTALT);
   ret |= ioctl(fd, UI_SET_KEYBIT, KEY_LEFTCTRL);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_A);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_S);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_D);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_F);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_ENTER);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_ESC);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_SPACE);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_TAB);
   
   if(ret) {
     fprintf(stderr, "Error while configuring uinput device!\n");

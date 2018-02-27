@@ -31,10 +31,10 @@ void updateUInputDevice(int UInputFIle, I2CJoystickStatus *newStatus, I2CJoystic
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 3, KEY_RIGHT);
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 4, KEY_LEFTALT);
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 5, KEY_LEFTCTRL);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 6, KEY_A);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 7, KEY_S);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 8, KEY_D);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 9, KEY_F);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 6, KEY_ENTER);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 7, KEY_ESC);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 8, KEY_SPACE);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 9, KEY_TAB);
 }
 
 int main(int argc, char *argv[]) {
