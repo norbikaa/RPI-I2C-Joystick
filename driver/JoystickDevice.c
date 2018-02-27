@@ -19,16 +19,16 @@ int createUInputDevice() {
   ret |= ioctl(fd, UI_SET_EVBIT, EV_REL);
 
   // bouton
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_LEFT);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_DOWN);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_UP);
+  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_RIGHT);
+  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_SELECT);
+  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_START);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_A);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_B);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_X);
   ret |= ioctl(fd, UI_SET_KEYBIT, BTN_Y);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_UP);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_DOWN);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_LEFT);
-  ret |= ioctl(fd, UI_SET_KEYBIT, KEY_RIGHT);
-  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_SELECT);
-  ret |= ioctl(fd, UI_SET_KEYBIT, BTN_START);
   
   if(ret) {
     fprintf(stderr, "Error while configuring uinput device!\n");
