@@ -25,17 +25,16 @@ int readI2CJoystick(int file, I2CJoystickStatus *status) {
 
 void updateUInputDevice(int UInputFIle, I2CJoystickStatus *newStatus, I2CJoystickStatus *status) {
   // update button event
-  printf("Shit happens\n");
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 0, KEY_LEFT);
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 1, KEY_DOWN);
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 2, KEY_UP);
   TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 3, KEY_RIGHT);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 4, BTN_SELECT);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 5, BTN_START);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 6, BTN_A);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 7, BTN_B);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 8, BTN_X);
-  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 9, BTN_Y);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 4, KEY_LEFTALT);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 5, KEY_LEFTCTRL);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 6, KEY_A);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 7, KEY_S);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 8, KEY_D);
+  TestBitAndSendKeyEvent(status->buttons, newStatus->buttons, 9, KEY_F);
 }
 
 int main(int argc, char *argv[]) {
